@@ -1,97 +1,125 @@
-// BURGER
-let home = document.querySelector('.home');
-let burger = document.querySelector('.burger');
-let menu = document.querySelector('.header__nav');
-let menuLinks = menu.querySelectorAll('.nav__link');
+// ROUTE
+document.addEventListener('DOMContentLoaded', () => {
 
-burger.addEventListener('click',
-  function () {
-    burger.classList.toggle('burger--active');
-    menu.classList.toggle('header__nav--active');
-    document.body.classList.toggle('stop-scroll');
-  })
+  const routeBtns = document.querySelectorAll('.route__btn');
+  const drops = document.querySelectorAll('.dropdown');
 
-home.addEventListener('click',
-  function () {
-    burger.classList.remove('burger--active');
-    menu.classList.remove('header__nav--active');
-    document.body.classList.remove('stop-scroll');
-  })
+  routeBtns.forEach(el => {
+    el.addEventListener('click', (e) => {
+      let currentBtn = e.currentTarget;
+      // 1строка- найдем dropdown (текущий) через родителя route__item
+      let drop = currentBtn.closest('.route__item').querySelector('.dropdown');
 
-menuLinks.forEach(function (el) {
-  el.addEventListener('click', function () {
-    burger.classList.remove('burger--active');
-    menu.classList.remove('header__nav--active');
-    document.body.classList.remove('stop-scroll');
-  })
-})
+      // 3с- клик на кнопку и ей добавится .route__btn--active
+      // 2с- класс добавится нужной, а у соседей сбросится
+      routeBtns.forEach(el => {
+        if (el !== currentBtn) {
+          el.classList.remove('route__btn--active');
+        }
+      });
+      currentBtn.classList.toggle('route__btn--active');
 
+      drops.forEach(el => {
+        if (el !== drop) {
+          el.classList.remove('dropdown--active');
+        }
+      });
+      drop.classList.toggle('dropdown--active');
+    });
+  });
+  // по клику в другое место закрыть dropdown
+  // если наша цель не является потомком route-list, тогда...
+  // будем удалять классы, перенеся 2с сюда + подкорректируя:
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.route-list')) {
+      routeBtns.forEach(el => {
+        el.classList.remove('route__btn--active');
+      });
+      drops.forEach(el => {
+        el.classList.remove('dropdown--active');
+      });
+    }
+  });
+  // + сделать .route-list inline-flex в css!
+});
 
-
-// HEADER-SEARCH
-let searchBtn = document.querySelector('.header__search-btn');
-let searchForm = document.querySelector('.header__search');
-let searchClose = document.querySelector('.header__search-close');
-
-searchBtn.addEventListener('click',
-  function () {
-    searchForm.classList.add('header__search--active')
-  })
-
-searchClose.addEventListener('click',
-  function () {
-    searchForm.classList.remove('header__search--active')
-  })
 
 
 
 // SWIPER
-const swiper = new Swiper('.home__swiper', {
-  spaceBetween: 50,
+const swiperHero = new Swiper('.hero__swiper', {
+  spaceBetween: 5,
   loop: true,
   speed: 300,
 
+  a11y: {
+    paginationBulletMessage: 'Перейти к слайду {{index}}',
+  },
+
+});
+
+
+new Swiper('.gallery__swiper', {
+  slidesPerView: 3,
+  slidesPerGroup: 3,
+  loop: true,
+  spaceBetween: 50,
+  speed: 300,
+
+  navigation: {
+    prevEl: ".gallery__prev",
+    nextEl: ".gallery__next",
+  },
+
   pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true,
+    el: ".gallery__pagin",
+    type: 'fraction',
   },
 
   a11y: {
-  paginationBulletMessage: 'Перейти к слайду {{index}}',
+    paginationBulletMessage: 'Перейти к слайду {{index}}',
   },
+
+  // keyboard: {
+  //   enabled: true,
+  //   onlyInViewport: true,
+  //   pageUpDoun: true,
+  // },
 });
 
 
 
-// TABS
-let tabsBtn = document.querySelectorAll('.stage__btn');
-let tabsItem = document.querySelectorAll('.tabs__bloc');
-
-tabsBtn.forEach(function (element) {
-  element.addEventListener('click', function (e) {
-    const path = e.currentTarget.dataset.path;
-
-    tabsBtn.forEach(function (btn) {
-      btn.classList.remove('stage__btn--active')
-    });
-    e.currentTarget.classList.add('stage__btn--active');
-
-    tabsItem.forEach(function (element) {
-      element.classList.remove('tabs--active')
-    });
-
-    document.querySelector(`[data-target="${path}"]`).classList.add('tabs--active');
-  });
-});
 
 
 
-// ACCORDION
-new Accordion('.question__list', {
-	elementClass: 'accordion',
-	triggerClass: 'accordion__control',
-	panelClass: 'accordion__content',
-	activeClass: 'accordion--active'
-});
 
+
+
+
+
+
+
+
+// new swiperGallery('.gallery__swiper', {
+//   navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//       },
+
+//       pagination: {
+//             el: ".swiper-pagination",
+//             type: 'fraction',
+//           },
+
+//       keyboard: {
+//         enabled: true,
+//         onlyInViewport: true,
+//         pageUpDoun: true,
+//       },
+
+//       slidesPerView:3,
+//       slidesPerGroup:3,
+  // spaceBetween: 50,
+  // loop: true,
+  // speed: 300,
+// });
