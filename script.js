@@ -95,31 +95,51 @@ new Swiper('.gallery__swiper', {
 
 
 
+// TOOLTIP
+const button1 = document.querySelector('#button1');
+const tooltip1 = document.querySelector('#tooltip1');
+Popper.createPopper(button1, tooltip1, {
+	placement: 'top',
+  modifiers: [
+    {
+      name: 'offset',
+      options: {
+        offset: [0, 7],
+      },
+    },
+  ],
+});
+
+const button2 = document.querySelector('#button2');
+const tooltip2 = document.querySelector('#tooltip2');
+Popper.createPopper(button2, tooltip2, {
+	placement: 'top',
+  modifiers: [
+    {
+      name: 'offset',
+      options: {
+        offset: [0, 7],
+      },
+    },
+  ],
+});
+
+const button3 = document.querySelector('#button3');
+const tooltip3 = document.querySelector('#tooltip3');
+Popper.createPopper(button3, tooltip3, {
+	placement: 'top',
+  modifiers: [
+    {
+      name: 'offset',
+      options: {
+        offset: [0, 7],
+      },
+    },
+  ],
+});
 
 
 
 
 
-// new swiperGallery('.gallery__swiper', {
-//   navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//       },
 
-//       pagination: {
-//             el: ".swiper-pagination",
-//             type: 'fraction',
-//           },
-
-//       keyboard: {
-//         enabled: true,
-//         onlyInViewport: true,
-//         pageUpDoun: true,
-//       },
-
-//       slidesPerView:3,
-//       slidesPerGroup:3,
-  // spaceBetween: 50,
-  // loop: true,
-  // speed: 300,
-// });

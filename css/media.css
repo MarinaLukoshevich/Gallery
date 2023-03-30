@@ -184,6 +184,22 @@ XXIV Международная биеннале молодого искусст
 
 
 
+/* зона кликабельности ссылки:увеличить! */
+.div {
+  position: relative;
+}
+
+.a::before {
+  content: ;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+
+max-width: calc(363 * 100% / 1770);
 
 
 
