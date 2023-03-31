@@ -1328,16 +1328,21 @@ body {
 /* state  finish */
 
 
+#map1 {
+  width: 100%;
+	height: 700px;
+}
 
+[class*="ground-pane"] {
+	filter: grayscale(100%);
+}
 
+[class*="zoom__scale"] {
+	display: none;
+}
 
-
-
-
-
-#map {
-  background-color: #CACACA;
-  height: 700px;
+[class*="zoom__plus"] {
+	top: 150px;
 }
 
 

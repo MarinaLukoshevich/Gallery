@@ -143,3 +143,29 @@ Popper.createPopper(button3, tooltip3, {
 
 
 
+
+// MAP
+ymaps.ready(init);
+function init() {
+	var myMap = new ymaps.Map("map1", {
+		center: [55.76021556895837,37.614769499999944],
+		zoom: 17,
+    controls: [] , // это отключает элементы управления
+    controls: ['zoomControl', 'geolocationControl'],
+	},
+  {
+    suppressMapOpenBlock: true, // это отключает некоторые элементы внизу карты
+  });
+
+	var myPlacemark = new ymaps.Placemark([55.76021556895837,37.614769499999944], {}, {
+		iconLayout: 'default#image',
+		iconImageHref: 'img/geoObject.svg',
+		iconImageSize: [20, 20],
+	});
+
+	myMap.geoObjects.add(myPlacemark);
+}
+
+
+
+
