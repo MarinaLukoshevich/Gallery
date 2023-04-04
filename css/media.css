@@ -202,8 +202,9 @@ XXIV Международная биеннале молодого искусст
 max-width: calc(363 * 100% / 1770);
 
 
-
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
-
-
-
