@@ -55,46 +55,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // SWIPER
-const swiperHero = new Swiper('.hero__swiper', {
-  spaceBetween: 5,
-  loop: true,
-  speed: 300,
-
-  a11y: {
-    paginationBulletMessage: 'Перейти к слайду {{index}}',
-  },
-
-});
-
-
-// new Swiper('.gallery__swiper', {
-//   slidesPerView: 3,
-//   slidesPerGroup: 3,
-//   // loop: true,
-//   spaceBetween: 50,
+// const swiperHero = new Swiper('.hero__swiper', {
+//   spaceBetween: 5,
+//   loop: true,
 //   speed: 300,
-
-//   navigation: {
-//     prevEl: ".gallery__prev",
-//     nextEl: ".gallery__next",
-//   },
-
-//   pagination: {
-//     el: ".gallery__pagin",
-//     type: 'fraction',
-//   },
 
 //   a11y: {
 //     paginationBulletMessage: 'Перейти к слайду {{index}}',
 //   },
 
-//   keyboard: {
-//     enabled: true,
-//     onlyInViewport: true,
-//     pageUpDoun: true,
-//   },
 // });
 
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let heroSlider = new Swiper(".hero__swiper", {
+    loop: true,
+    spaceBetween: 50,
+    speed: 300,
+
+    a11y: {
+      paginationBulletMessage: 'Перейти к слайду {{index}}',
+    },
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true
+    },
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    slideVisibleClass: "slide-visible",
+
+    on: {
+      init: function () {
+        this.slides.forEach((slide) => {
+          if (!slide.classList.contains("slide-visible")) {
+            slide.tabIndex = "-1";
+          } else {
+            slide.tabIndex = "";
+          }
+        });
+      },
+      slideChange: function () {
+        this.slides.forEach((slide) => {
+          if (!slide.classList.contains("slide-visible")) {
+            slide.tabIndex = "-1";
+          } else {
+            slide.tabIndex = "";
+          }
+        });
+      }
+    }
+
+  });
+});
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -165,51 +181,122 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  let eventsSlider = new Swiper(".events__swiper", {
+    slidesPerView: 3,
+    slidesPerGroup: 3,
+    spaceBetween: 50,
+    speed: 300,
+    navigation: {
+      prevEl: ".events__btn-prev",
+      nextEl: ".events__btn-next"
+    },
 
+    breakpoints: {
+      441: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 50
+      }
+    },
 
+    a11y: {
+      paginationBulletMessage: 'Перейти к слайду {{index}}',
+    },
 
-new Swiper('.projects__swiper', {
-  slidesPerView: 3,
-  slidesPerGroup: 1,
-  spaceBetween: 50,
-  speed: 300,
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true
+    },
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    slideVisibleClass: "slide-visible",
 
-  navigation: {
-    prevEl: ".projects__prev",
-    nextEl: ".projects__next",
-  },
+    on: {
+      init: function () {
+        this.slides.forEach((slide) => {
+          if (!slide.classList.contains("slide-visible")) {
+            slide.tabIndex = "-1";
+          } else {
+            slide.tabIndex = "";
+          }
+        });
+      },
+      slideChange: function () {
+        this.slides.forEach((slide) => {
+          if (!slide.classList.contains("slide-visible")) {
+            slide.tabIndex = "-1";
+          } else {
+            slide.tabIndex = "";
+          }
+        });
+      }
+    }
 
-  a11y: {
-    paginationBulletMessage: 'Перейти к слайду {{index}}',
-  },
+  });
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  let projectsSlider = new Swiper(".projects__swiper", {
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween: 50,
+    speed: 300,
+    navigation: {
+      prevEl: ".projects__btn-prev",
+      nextEl: ".projects__btn-next"
+    },
 
+    breakpoints: {
+      441: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 50
+      }
+    },
 
+    a11y: {
+      paginationBulletMessage: 'Перейти к слайду {{index}}',
+    },
 
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true
+    },
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    slideVisibleClass: "slide-visible",
 
+    on: {
+      init: function () {
+        this.slides.forEach((slide) => {
+          if (!slide.classList.contains("slide-visible")) {
+            slide.tabIndex = "-1";
+          } else {
+            slide.tabIndex = "";
+          }
+        });
+      },
+      slideChange: function () {
+        this.slides.forEach((slide) => {
+          if (!slide.classList.contains("slide-visible")) {
+            slide.tabIndex = "-1";
+          } else {
+            slide.tabIndex = "";
+          }
+        });
+      }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  });
+});
 
 
 
