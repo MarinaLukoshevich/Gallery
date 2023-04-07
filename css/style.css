@@ -1130,46 +1130,380 @@ body {
   padding-bottom: 40px;
 }
 
-.catalog__top {
-  max-width: calc(1080 * 100% / 1600);
-  margin-bottom: var(--gap2);
-}
-
-.catalog__ArtistAccordion {
-  justify-content: space-between;
-}
-
-.catalog__list {
-  flex-basis: calc(800 * 100% / 1600);
-}
-
-.accordion__control {
-  justify-content: space-between;
-  width: 100%;
-}
-
-
-
-
-.catalog__artist-list {
-  flex-basis: calc(750 * 100% / 1600);
-}
-
-.catalog__artist {
+.catalog__painter-info {
+  display: flex;
   flex-direction: column;
 }
 
-.artist__picture {
+.catalog__picture {
   margin-bottom: 30px;
 }
 
-.artist__name {
+.catalog__painter-name {
   margin: 0 0 15px;
 }
 
-.artist__life {
+.catalog__painter-life {
   margin: 0 0 15px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--black3);
 }
+
+.catalog__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog__painter-info {
+  display: none;
+}
+
+.catalog__painter-info.js-active {
+  display: block;
+  animation-name: fade-in;
+  animation-duration: .5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.catalog__content-wrap {
+  width: calc(750 / 1600 * 100%);
+}
+
+.catalog__accordion {
+  width: calc(800 / 1600 * 100%);
+}
+
+.accordion__control {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+  border-right: none;
+  border-left: none;
+  padding: 41px 150px 41px 0;
+  text-align: left;
+  transition: 0.3s linear;
+}
+
+.accordion__control-text {
+  position: relative;
+}
+
+.accordion__control-text::before {
+  content: "";
+  position: absolute;
+  /* z-index: -1; */
+  top: -6px;
+  left: 0;
+  bottom: -4px;
+  right: -8px;
+  opacity: 0;
+  background-color: var(--purple1);
+  transition: 0.3s linear;
+}
+
+.accordion__control:focus-visible {
+  color: var(--white);
+}
+
+.accordion__control:focus-visible:not(:hover) .accordion__control-text::before {
+  opacity: 1;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.accordion__control:hover {
+  border-color: var(--purple1);
+  color: var(--purple1);
+}
+
+.accordion__control:active,
+.is-active .accordion__control:not(:hover) {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+.is-active .accordion__control-text::before {
+  /* opacity: 0; не работает? */
+  /* display: none; работает*/
+  background-color: transparent;
+}
+
+
+
+.accordion__control-text-wrap {
+  position: relative;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.head-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  transform: translateY(-50%) rotate(-180deg);
+  transition: 0.5s linear;
+}
+
+.head-icon * {
+  transition: 0.3s linear;
+}
+
+.accordion__control:hover .head-icon-round,
+.accordion__control:focus-visible .head-icon-round {
+  fill: var(--purple3);
+  stroke: var(--purple3);
+}
+
+.is-active .head-icon {
+  transform: translateY(-50%) rotate(0);
+}
+
+.is-active .accordion__control .head-icon-round {
+  fill: var(--purple3);
+  stroke: var(--purple1);
+}
+
+
+
+
+.accordion__content {
+  overflow: hidden;
+  visibility: hidden;
+  /* margin-top: -1px; */
+  /* border-bottom: 1px solid transparent; */
+}
+
+.is-active .accordion__content {
+  visibility: visible;
+}
+
+.accordion__content-wrap {
+  padding: 25px 0;
+}
+
+.accordion__inner-list {
+  width: 91%;
+  column-count: 3;
+}
+
+
+
+.link {
+  position: relative;
+  transition: 0.3s linear;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: -4px;
+  bottom: -4px;
+  background-color: var(--purple1);
+  opacity: 0;
+  transition: 0.3s linear;
+}
+
+.link:focus-visible:not(:hover):not(:active)::after {
+  opacity: 1;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.link:hover:not(:active) {
+  border-bottom: 1px solid var(--purple1);
+}
+
+
+.no-artist__link {
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--purple1);
+  transition: 0.3s linear;
+}
+
+.no-artist__link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: -4px;
+  bottom: -4px;
+  background-color: var(--purple1);
+  opacity: 0;
+  transition: 0.3s linear;
+}
+
+.no-artist__link:focus-visible:not(:hover):not(:active)::after {
+  opacity: 1;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  color: var(--white);
+}
+
+.no-artist__link:hover:not(:active) {
+  border-bottom: 1px solid var(--purple1);
+}
+
+.no-artist__link:active {
+  color: var(--purple);
+}
+
+
+
+
+
+
+
+
+
+
+/*
+.link:focus:not(:hover):not(:active)::before {
+  opacity: 1;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.link:active {
+  color: var(--purple);
+  transition: none;
+}
+
+.link--text {
+  color: var(--violet-light);
+  transition: color var(--short);
+}
+
+.link--text::before {
+  left: -1px;
+  right: -1px;
+}
+
+.link--text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: currentColor;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--short);
+}
+
+.link--text:hover::after {
+  transform: scaleX(1);
+}
+
+.link--text:focus:not(:hover):not(:active) {
+  color: var(--white);
+}
+
+.link__text {
+  position: relative;
+}
+
+.link__icon {
+  width: 100%;
+}
+
+.link--text-dark {
+  color: var(--purple1);
+}
+
+.link--text-dark:hover {
+  color: var(--purple);
+}
+
+.link--text-dark:focus:not(:hover):not(:active) {
+  color: var(--white);
+}
+
+.link--text-dark::before {
+  left: -8px;
+  right: -8px;
+  bottom: -7px;
+  background-color: var(--purple1);
+}
+
+.link--text-dark:focus::after {
+  transform: scaleX(1);
+}
+
+.link--text-dark:active {
+  color: var(--dark)
+} */
+
+/* Link another */
+
+/* .link--text-another {
+  color: var(--dark);
+}
+
+.link--text-another:hover {
+  color: var(--purple);
+}
+
+.link--text-another:focus:not(:hover):not(:active) {
+  color: var(--white);
+}
+
+.link--text-another::before {
+  top: 0;
+  bottom: 0;
+  left: -3px;
+  right: -3px;
+  background-color: var(--purple1);
+}
+
+.link--text-another:active {
+  color: var(--purple);
+}
+
+.link--text-another:active::after {
+  transform: scaleX(0);
+}
+
+@media (max-width: 1024px) {
+  .accordion__item {
+    width: calc(100% / 2 - 30px);
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
