@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       enabled: true,
       onlyInViewport: true
     },
+
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     slideVisibleClass: "slide-visible",
@@ -108,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     }
-
   });
 });
 
