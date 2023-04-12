@@ -1,3 +1,7 @@
+
+
+
+
 // ROUTE
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -135,9 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 30
       },
 
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 50
+      1024: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 34
       }
     },
 
@@ -191,15 +196,19 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".events__btn-prev",
       nextEl: ".events__btn-next"
     },
+    pagination: {
+      el: '.events__pagination',
+      type: 'bullets',
+      clickable: true,
+    },
 
     breakpoints: {
       441: {
         slidesPerView: 1,
         spaceBetween: 30
       },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 50
+      1024: {
+        spaceBetween: 27
       }
     },
 
@@ -256,9 +265,9 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 1,
         spaceBetween: 30
       },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 50
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 50,
       }
     },
 
@@ -505,6 +514,51 @@ validation.onSuccess(function () {
 
 
 
+
+// BURGER
+let home = document.querySelector('.home');
+let burger = document.querySelector('.burger');
+let menu = document.querySelector('.header__nav');
+let menuLinks = menu.querySelectorAll('.nav__link');
+
+burger.addEventListener('click',
+  function () {
+    burger.classList.toggle('burger--active');
+    menu.classList.toggle('header__nav--active');
+    document.body.classList.toggle('stop-scroll');
+  });
+
+home.addEventListener('click',
+  function () {
+    burger.classList.remove('burger--active');
+    menu.classList.remove('header__nav--active');
+    document.body.classList.remove('stop-scroll');
+  });
+
+menuLinks.forEach(function (el) {
+  el.addEventListener('click', function () {
+    burger.classList.remove('burger--active');
+    menu.classList.remove('header__nav--active');
+    document.body.classList.remove('stop-scroll');
+  });
+});
+
+
+
+// HEADER-SEARCH
+let searchBtn = document.querySelector('.header__search-btn');
+let searchForm = document.querySelector('.header__search');
+let searchClose = document.querySelector('.header__search-close');
+
+searchBtn.addEventListener('click',
+  function () {
+    searchForm.classList.add('header__search--active')
+  });
+
+searchClose.addEventListener('click',
+  function () {
+    searchForm.classList.remove('header__search--active')
+  });
 
 
 
