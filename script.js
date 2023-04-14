@@ -134,15 +134,23 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     breakpoints: {
-      441: {
-        slidesPerView: 1,
-        spaceBetween: 30
+      1920: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 50
       },
-
       1024: {
         slidesPerView: 2,
         slidesPerGroup: 2,
         spaceBetween: 34
+      },
+      768: {
+        spaceBetween: 38
+      },
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 30
       }
     },
 
@@ -203,12 +211,23 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     breakpoints: {
-      441: {
-        slidesPerView: 1,
-        spaceBetween: 30
+      1920: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 50
       },
       1024: {
         spaceBetween: 27
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 34
+      },
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 30
       }
     },
 
@@ -260,14 +279,21 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: ".projects__btn-next"
     },
 
+
     breakpoints: {
-      441: {
-        slidesPerView: 1,
-        spaceBetween: 30
+      1920: {
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 50
       },
       1024: {
-        slidesPerView: 2,
-        spaceBetween: 50,
+        slidesPerView: 2
+      },
+      768: {
+        spaceBetween: 34
+      },
+      320: {
+        slidesPerView: 1
       }
     },
 

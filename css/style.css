@@ -1859,17 +1859,23 @@ body {
 
 
 .form {
-  gap: 20px;
-  align-items: center;
+  justify-content: space-between;
   padding: 14px 0;
   width: calc(910 * 100% / 1600);
+}
+
+.form__wrap {
+  justify-content: space-between;
+  align-items: center;
+  width: calc(560 * 100% / 910);
 }
 
 .form__input {
   display: flex;
   flex-direction: column-reverse;
+  width: calc(270 * 100% / 560);
   cursor: pointer;
-  width: calc(270 * 100% / 910);
+
 }
 
 .name,
@@ -1899,6 +1905,7 @@ body {
   line-height: 16px;
   color: var(--red);
 }
+
 
 .name:hover,
 .tel:hover,
