@@ -1,4 +1,54 @@
 
+// BURGER
+let burger = document.querySelector('.burger');
+let menu = document.querySelector('.header__nav');
+let menuLinks = menu.querySelectorAll('.nav__link');
+let login = document.querySelector('.login');
+
+burger.addEventListener('click',
+  function () {
+    burger.classList.toggle('burger--active');
+    menu.classList.toggle('header__nav--active');
+    login.classList.toggle('login--active');
+    document.body.classList.toggle('stop-scroll');
+  });
+
+menuLinks.forEach(function (el) {
+  el.addEventListener('click', function () {
+    burger.classList.remove('burger--active');
+    menu.classList.remove('header__nav--active');
+    login.classList.remove('login--active');
+    document.body.classList.remove('stop-scroll');
+  });
+
+login.addEventListener('click',
+function () {
+    burger.classList.remove('burger--active');
+    menu.classList.remove('header__nav--active');
+    login.classList.remove('login--active');
+    document.body.classList.remove('stop-scroll');
+  });
+});
+
+
+
+
+
+// HEADER-SEARCH
+let searchBtn = document.querySelector('.header__search-btn');
+let searchForm = document.querySelector('.header__search');
+let searchClose = document.querySelector('.header__search-close');
+
+searchBtn.addEventListener('click',
+  function () {
+    searchForm.classList.add('header__search--active')
+  });
+searchClose.addEventListener('click',
+  function () {
+    searchForm.classList.remove('header__search--active')
+  });
+
+
 
 
 
@@ -51,44 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
 // SWIPER
-// const swiperHero = new Swiper('.hero__swiper', {
-//   spaceBetween: 5,
-//   loop: true,
-//   speed: 300,
-
-//   a11y: {
-//     paginationBulletMessage: 'Перейти к слайду {{index}}',
-//   },
-
-// });
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   let heroSlider = new Swiper(".hero__swiper", {
     loop: true,
     spaceBetween: 50,
     speed: 300,
-
     a11y: {
       paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
-
     keyboard: {
       enabled: true,
       onlyInViewport: true
     },
-
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     slideVisibleClass: "slide-visible",
@@ -123,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesPerGroup: 3,
     spaceBetween: 50,
     speed: 300,
-
     pagination: {
       el: ".gallery__pagination",
       type: "fraction"
@@ -132,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".gallery__btn-prev",
       nextEl: ".gallery__btn-next"
     },
-
     breakpoints: {
       1920: {
         slidesPerView: 3,
@@ -153,22 +176,18 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 30
       }
     },
-
     // a11y: false,
     a11y: {
       paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
-
     keyboard: {
       enabled: true,
       onlyInViewport: true
     }, // можно управлять с клавиатуры стрелками влево/вправо
-
     // Дальнейшие надстройки делают слайды вне области видимости не фокусируемыми
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     slideVisibleClass: "slide-visible",
-
     on: {
       init: function () {
         this.slides.forEach((slide) => {
@@ -189,7 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     }
-
   });
 });
 
@@ -209,7 +227,6 @@ document.addEventListener("DOMContentLoaded", () => {
       type: 'bullets',
       clickable: true,
     },
-
     breakpoints: {
       1920: {
         slidesPerView: 3,
@@ -230,11 +247,9 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 30
       }
     },
-
     a11y: {
       paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
-
     keyboard: {
       enabled: true,
       onlyInViewport: true
@@ -242,7 +257,6 @@ document.addEventListener("DOMContentLoaded", () => {
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     slideVisibleClass: "slide-visible",
-
     on: {
       init: function () {
         this.slides.forEach((slide) => {
@@ -263,7 +277,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     }
-
   });
 });
 
@@ -278,8 +291,6 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".projects__btn-prev",
       nextEl: ".projects__btn-next"
     },
-
-
     breakpoints: {
       1920: {
         slidesPerView: 3,
@@ -296,11 +307,9 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 1
       }
     },
-
     a11y: {
       paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
-
     keyboard: {
       enabled: true,
       onlyInViewport: true
@@ -308,7 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     slideVisibleClass: "slide-visible",
-
     on: {
       init: function () {
         this.slides.forEach((slide) => {
@@ -329,13 +337,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     }
-
   });
 });
-
-
-
-
 
 
 
@@ -354,18 +357,12 @@ const choices = new Choices(element, {
 
 
 
-
-
-
-
-
 // ACCORDEON
 (() => {
   new Accordion(".js-accordion-container", {
     openOnInit: [0]
   });
 })();
-
 
 // Табы
 const params = {
@@ -388,13 +385,11 @@ function setTabs(params) {
     contents.forEach((el) => {
       el.classList.remove(params.active);
     });
-
     currentContent.classList.add(params.active);
 
     tabBtns.forEach((el) => {
       el.classList.remove(params.active);
     });
-
     this.classList.add(params.active);
   }
 
@@ -402,17 +397,7 @@ function setTabs(params) {
     el.addEventListener("click", onTabClick);
   });
 }
-
 setTabs(params);
-
-
-
-
-
-
-
-
-
 
 
 
@@ -465,37 +450,25 @@ Popper.createPopper(button3, tooltip3, {
 
 
 
-
-
-
-
-
 // MAP
 ymaps.ready(init);
 function init() {
   var myMap = new ymaps.Map("map1", {
     center: [55.76021556895837, 37.614769499999944],
     zoom: 17,
-    controls: [], // это отключает элементы управления
+    controls: [], // отключает элементы управления
     controls: ['zoomControl', 'geolocationControl'],
   },
     {
-      suppressMapOpenBlock: true, // это отключает некоторые элементы внизу карты
+      suppressMapOpenBlock: true, // отключает некоторые элементы внизу карты
     });
-
   var myPlacemark = new ymaps.Placemark([55.76021556895837, 37.614769499999944], {}, {
     iconLayout: 'default#image',
     iconImageHref: 'img/geoObject.svg',
     iconImageSize: [20, 20],
   });
-
   myMap.geoObjects.add(myPlacemark);
-}
-
-
-
-
-
+};
 
 
 
@@ -537,57 +510,6 @@ const validation = new JustValidate(".form", {
 validation.onSuccess(function () {
   document.getElementById("form").submit();
 });
-
-
-
-
-// BURGER
-let home = document.querySelector('.home');
-let burger = document.querySelector('.burger');
-let menu = document.querySelector('.header__nav');
-let menuLinks = menu.querySelectorAll('.nav__link');
-
-burger.addEventListener('click',
-  function () {
-    burger.classList.toggle('burger--active');
-    menu.classList.toggle('header__nav--active');
-    document.body.classList.toggle('stop-scroll');
-  });
-
-home.addEventListener('click',
-  function () {
-    burger.classList.remove('burger--active');
-    menu.classList.remove('header__nav--active');
-    document.body.classList.remove('stop-scroll');
-  });
-
-menuLinks.forEach(function (el) {
-  el.addEventListener('click', function () {
-    burger.classList.remove('burger--active');
-    menu.classList.remove('header__nav--active');
-    document.body.classList.remove('stop-scroll');
-  });
-});
-
-
-
-// HEADER-SEARCH
-let searchBtn = document.querySelector('.header__search-btn');
-let searchForm = document.querySelector('.header__search');
-let searchClose = document.querySelector('.header__search-close');
-
-searchBtn.addEventListener('click',
-  function () {
-    searchForm.classList.add('header__search--active')
-  });
-
-searchClose.addEventListener('click',
-  function () {
-    searchForm.classList.remove('header__search--active')
-  });
-
-
-
 
 
 

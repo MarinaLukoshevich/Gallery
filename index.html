@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="css/normalize.css">
 
   <!-- SKROLL -->
-  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
   <!-- SWIPER -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <!-- SELECT -->
   <link rel="stylesheet" href="libs/choices.min.css">
 
@@ -23,7 +23,7 @@
   <header class="header">
     <div class="container">
       <div class="header__content flex ">
-        <button class="burger btn-reset">
+        <button class="burger btn-reset" aria-label="Меню">
           <span class="burger__line"></span>
           <span class="burger__line"></span>
           <span class="burger__line"></span>
@@ -32,7 +32,6 @@
         <a href="#" class="logo">
           <img src="img/Logo.svg" alt="Логотип" class="logo__img">
         </a>
-
         <nav class="nav header__nav" title="Главное меню">
           <ul class="nav__list list-reset flex">
             <li class="nav__item">
@@ -80,8 +79,6 @@
           </a>
         </div>
 
-
-
         <div class="header__search-div flex">
           <button class="header__search-btn btn-reset" aria-label="Поиск по сайту">
             <svg class="header__svg" width="30" height="29" viewbox="0 0 23 22" fill="none"
@@ -105,11 +102,9 @@
                   fill="white" />
               </svg>
             </button>
-
             <input class="header__input" id="search" type="text" name="search" aria-label="Что будем искать по сайту">
-
             <button class="header__search-close btn-reset" type="button" aria-label="Закрыть поиск по сайту">
-              <svg class="header__svg-close" width="23" height="23" viewBox="0 0 23 23" fill="none"
+              <svg class="header__svg-close" width="23" height="23" viewbox="0 0 23 23" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <rect width="29.567" height="2.9567" transform="matrix(0.707093 0.707121 -0.707093 0.707121 2.09375 0)"
                   fill="white" />
@@ -117,10 +112,8 @@
                   fill="white" />
               </svg>
             </button>
-
           </form>
         </div>
-
 
       </div>
     </div>
@@ -128,12 +121,14 @@
 
 
 
+
   <main class="main">
     <section class="header2">
       <div class="container">
         <div class="header2__RouteSerch flex">
-          <ul class="route route-list list-reset flex">
+          <h2 class="visually-hidden">Направления в искусстве</h2>
 
+          <ul class="route route-list list-reset flex">
             <li class="route__item">
               <button class="route__btn btn-reset flex">
                 <span class="route__title">Реализм</span>
@@ -280,23 +275,20 @@
             </li>
           </ul>
 
+          <form class="header2__search flex" action="https://jsonplaceholder.typicode.com/posts" method="post">
+            <button class="header2__search-submit btn-reset" type="submit" aria-label="Искать по сайту">
+              <svg class="header2__svg" width="23" height="22" viewbox="0 0 23 22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect width="6.8678" height="1.71695"
+                  transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z"
+                  fill="white" />
+              </svg>
+            </button>
+            <input class="header2__input" type="text" name="search" placeholder="Поиск по сайту">
+          </form>
 
-          <div class="header2__search-div flex">
-            <form class="header2__search flex" action="https://jsonplaceholder.typicode.com/posts" method="post">
-              <button class="header2__search-submit btn-reset" type="submit" aria-label="Искать по сайту">
-                <svg class="header2__svg" width="23" height="22" viewbox="0 0 23 22" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect width="6.8678" height="1.71695"
-                    transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z"
-                    fill="white" />
-                </svg>
-              </button>
-              <input class="header2__input" id="search" type="text" name="search" placeholder="Поиск по сайту">
-            </form>
-
-          </div>
         </div>
       </div>
     </section>
@@ -304,10 +296,8 @@
 
 
 
-
     <section id="hero" class="hero">
       <div class="container">
-
         <div class="swiper hero__swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide hero__slide1"></div>
@@ -315,7 +305,6 @@
             <div class="swiper-slide hero__slide3"></div>
           </div>
         </div>
-
         <div class="hero__content flex">
           <h1 class="hero__title">
             Прикоснитесь к&nbsp;прекрасному
@@ -331,6 +320,7 @@
         </div>
       </div>
     </section>
+
 
 
 
@@ -351,8 +341,6 @@
         </p>
       </div>
     </section>
-
-
 
 
 
@@ -405,61 +393,47 @@
               <div class="swiper-wrapper">
                 <a class="swiper-slide gallery__slide" href="#">
                   <picture>
-                    <source srcset="img/gallery1.jpg">
+                    <source srcset="img/gallery1-2x.jpg 2x">
                     <img class="gallery__image" src="img/gallery1.jpg" alt="Слайд №1">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__slide" href="#">
                   <picture>
-                    <source srcset="img/gallery2.jpg">
+                    <source srcset="img/gallery2-2x.jpg 2x">
                     <img class="gallery__image" src="img/gallery2.jpg" alt="Слайд №2">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__slide" href="#">
                   <picture>
-                    <source srcset="img/gallery3.jpg">
+                    <source srcset="img/gallery3-2x.jpg 2x">
                     <img class="gallery__image" src="img/gallery3.jpg" alt="Слайд №3">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__slide" href="#">
                   <picture>
-                    <source srcset="img/gallery4.jpg">
+                    <source srcset="img/gallery4-2x.jpg 2x">
                     <img class="gallery__image" src="img/gallery4.jpg" alt="Слайд №4">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__slide" href="#">
                   <picture>
-                    <source srcset="img/gallery5.jpg">
+                    <source srcset="img/gallery5-2x.jpg 2x">
                     <img class="gallery__image" src="img/gallery5.jpg" alt="Слайд №5">
                   </picture>
                 </a>
                 <a class="swiper-slide gallery__slide" href="#">
                   <picture>
-                    <source srcset="img/gallery6.jpg">
+                    <source srcset="img/gallery6-2x.jpg 2x">
                     <img class="gallery__image" src="img/gallery6.jpg" alt="Слайд №6">
                   </picture>
                 </a>
-
-                <a class="swiper-slide gallery__slide" href="#">
-                  <picture>
-                    <source srcset="" media="(max-width: 580px)">
-                    <source srcset="" media="(max-width: 960px)">
-                    <source srcset="" media="(max-width: 1360px)">
-                    <!-- В img картинка от 1361 до 1920 и выше -->
-                    <img class="gallery__image" src="img/gallery4.jpg" alt="">
-                  </picture>
-                </a>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
-
-
-
-
-
 
 
 
@@ -476,6 +450,7 @@
           уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.
         </p>
 
+
         <div class="catalog__wrap js-tabs-wrap">
           <div class="catalog__content-wrap">
             <div class="catalog__painter-info js-tab-content js-active" data-target="domenico">
@@ -487,13 +462,15 @@
               <span class="catalog__painter-life">2&nbsp;июня 1448&ndash;11 января 1494</span>
               <p class="catalog__painter-descr section-descr">
                 Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
-                продолжили его&nbsp;брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело
+                продолжили его&nbsp;брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный
+                Микеланджело
                 в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых
                 выпукло,
                 со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли
                 выступают знатные граждане Флоренции в&nbsp;костюмах того времени).
               </p>
             </div>
+
             <div class="catalog__painter-info js-tab-content" data-target="empty">
               <picture class="catalog__picture flex">
                 <source srcset="img/catalog-no-2x.jpg 2x">
@@ -503,7 +480,7 @@
               <p class="catalog__painter-descr section-descr">Пока ничего... Зато мы&nbsp;точно знаем, что
                 в&nbsp;галерее
                 есть на&nbsp;что посмотреть!</p>
-              <a href="#gallery" class="no-artist__link">
+              <a href="#gallery" class="catalog__link">
                 В&nbsp;галерею
               </a>
             </div>
@@ -515,7 +492,7 @@
                 <span class="accordion__control-text ">
                   <span class="accordion__control-text-wrap">C 1400 по 1499 гг.</span>
                 </span>
-                <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                <svg class="head-icon" width="50" height="50" viewbox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="head-icon-round"
                     d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z"
@@ -581,7 +558,6 @@
                         <span class="link__text">Бьяджо д’Антонио Туччи</span>
                       </a>
                     </li>
-
 
 
                     <li class="accordion__inner-item">
@@ -692,7 +668,7 @@
                 <span class="accordion__control-text">
                   <span class="accordion__control-text-wrap">C&nbsp;1500 по&nbsp;1599&nbsp;гг</span>
                 </span>
-                <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                <svg class="head-icon" width="50" height="50" viewbox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="head-icon-round"
                     d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z"
@@ -700,7 +676,6 @@
                   <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
                 </svg>
               </button>
-
               <div class="accordion__content ac-panel">
                 <div class="accordion__content-wrap flex">
                   <span class="accordion__content-picture"></span>
@@ -708,7 +683,7 @@
                     <h4 class="accordion__content-title bloc-title">Здесь пока пусто</h4>
                     <p class="accordion__content-descr section-descr"> А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
                       что-то интересное для себя</p>
-                    <a href="#gallery" class="no-artist__link">В&nbsp;галерею</a>
+                    <a href="#gallery" class="catalog__link">В&nbsp;галерею</a>
                   </div>
                 </div>
               </div>
@@ -719,7 +694,7 @@
                 <span class="accordion__control-text">
                   <span class="accordion__control-text-wrap">C&nbsp;1600 по&nbsp;1699&nbsp;гг</span>
                 </span>
-                <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                <svg class="head-icon" width="50" height="50" viewbox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="head-icon-round"
                     d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z"
@@ -727,7 +702,6 @@
                   <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
                 </svg>
               </button>
-
               <div class="accordion__content ac-panel">
                 <div class="accordion__content-wrap flex">
                   <span class="accordion__content-picture"></span>
@@ -735,7 +709,7 @@
                     <h4 class="accordion__content-title bloc-title">Здесь пока пусто</h4>
                     <p class="accordion__content-descr section-descr"> А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
                       что-то интересное для себя</p>
-                    <a href="#gallery" class="no-artist__link">В&nbsp;галерею</a>
+                    <a href="#gallery" class="catalog__link">В&nbsp;галерею</a>
                   </div>
                 </div>
               </div>
@@ -746,7 +720,7 @@
                 <span class="accordion__control-text">
                   <span class="accordion__control-text-wrap">C&nbsp;1700 по&nbsp;1799&nbsp;гг</span>
                 </span>
-                <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                <svg class="head-icon" width="50" height="50" viewbox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="head-icon-round"
                     d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z"
@@ -754,7 +728,6 @@
                   <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
                 </svg>
               </button>
-
               <div class="accordion__content ac-panel">
                 <div class="accordion__content-wrap flex">
                   <span class="accordion__content-picture"></span>
@@ -762,7 +735,7 @@
                     <h4 class="accordion__content-title bloc-title">Здесь пока пусто</h4>
                     <p class="accordion__content-descr section-descr"> А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
                       что-то интересное для себя</p>
-                    <a href="#gallery" class="no-artist__link">В&nbsp;галерею</a>
+                    <a href="#gallery" class="catalog__link">В&nbsp;галерею</a>
                   </div>
                 </div>
               </div>
@@ -773,7 +746,7 @@
                 <span class="accordion__control-text">
                   <span class="accordion__control-text-wrap">C&nbsp;1800 по&nbsp;1899&nbsp;гг</span>
                 </span>
-                <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                <svg class="head-icon" width="50" height="50" viewbox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="head-icon-round"
                     d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z"
@@ -781,7 +754,6 @@
                   <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
                 </svg>
               </button>
-
               <div class="accordion__content ac-panel">
                 <div class="accordion__content-wrap flex">
                   <span class="accordion__content-picture"></span>
@@ -789,7 +761,7 @@
                     <h4 class="accordion__content-title bloc-title">Здесь пока пусто</h4>
                     <p class="accordion__content-descr section-descr"> А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
                       что-то интересное для себя</p>
-                    <a href="#gallery" class="no-artist__link">В&nbsp;галерею</a>
+                    <a href="#gallery" class="catalog__link">В&nbsp;галерею</a>
                   </div>
                 </div>
               </div>
@@ -800,7 +772,7 @@
                 <span class="accordion__control-text">
                   <span class="accordion__control-text-wrap">C&nbsp;1900 по&nbsp;1999&nbsp;гг</span>
                 </span>
-                <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                <svg class="head-icon" width="50" height="50" viewbox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="head-icon-round"
                     d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z"
@@ -808,7 +780,6 @@
                   <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
                 </svg>
               </button>
-
               <div class="accordion__content ac-panel">
                 <div class="accordion__content-wrap flex">
                   <span class="accordion__content-picture"></span>
@@ -816,7 +787,7 @@
                     <h4 class="accordion__content-title bloc-title">Здесь пока пусто</h4>
                     <p class="accordion__content-descr section-descr"> А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
                       что-то интересное для себя</p>
-                    <a href="#gallery" class="no-artist__link">В&nbsp;галерею</a>
+                    <a href="#gallery" class="catalog__link">В&nbsp;галерею</a>
                   </div>
                 </div>
               </div>
@@ -827,7 +798,7 @@
                 <span class="accordion__control-text">
                   <span class="accordion__control-text-wrap">C&nbsp;2000&nbsp;г</span>
                 </span>
-                <svg class="head-icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                <svg class="head-icon" width="50" height="50" viewbox="0 0 50 50" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="head-icon-round"
                     d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z"
@@ -835,7 +806,6 @@
                   <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
                 </svg>
               </button>
-
               <div class="accordion__content ac-panel">
                 <div class="accordion__content-wrap flex">
                   <span class="accordion__content-picture"></span>
@@ -843,7 +813,7 @@
                     <h4 class="accordion__content-title bloc-title">Здесь пока пусто</h4>
                     <p class="accordion__content-descr section-descr"> А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
                       что-то интересное для себя</p>
-                    <a href="#gallery" class="no-artist__link">В&nbsp;галерею</a>
+                    <a href="#gallery" class="catalog__link">В&nbsp;галерею</a>
                   </div>
                 </div>
               </div>
@@ -856,20 +826,11 @@
 
 
 
-
-
-
-
-
-
-
-
     <section id="events" class="events">
       <div class="events__container container">
         <h2 class="events__title section-title">
           События
         </h2>
-
         <div class="events__wrap">
           <div class="events__navigation">
             <button class="events__btn btn-reset events__btn-prev" aria-label="К предыдущему слайду"></button>
@@ -885,7 +846,6 @@
                     <source srcset="img/events1-2x.jpg 2x">
                     <img src="img/events1.jpg" alt="Событие №1">
                   </picture>
-
                   <div class="events__TextLink flex">
                     <span class="events__location">
                       Музей им. Щусева <br>
@@ -1013,18 +973,22 @@
     </section>
 
 
+
+
     <section id="projects" class="projects section-offset">
       <div class="container">
         <div class="projects__top">
           <h2 class="projects__title section-title">
             Проекты
           </h2>
-          <div class="projects__descr section-descr">
-            Предварительные выводы: постоянное информационно&nbsp;&mdash;пропагандистское обеспечение нашей деятельности однозначно
-            фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны
-            с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой неузнаваемости, из-за чего возрастает
-            их&nbsp;статус бесполезности. Прежде всего, постоянное информационно&nbsp;&mdash;пропагандистское
-            <button id="button1" class="projects__btn-tooltip btn-reset" aria-describedby="tooltip">
+          <div class="popper projects__descr section-descr">
+            Предварительные выводы: постоянное информационно&nbsp;&mdash;&nbsp;пропагандистское обеспечение нашей
+            деятельности однозначно фиксирует необходимость своевременного выполнения
+            сверхзадачи. А&nbsp;ещё независимые государства смешаны
+            с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой неузнаваемости,
+            из-за чего возрастает
+            их&nbsp;статус бесполезности. Прежде всего, постоянное информационно&nbsp;&mdash;&nbsp;пропагандистское
+            <button id="button1" class="projects__btn-tooltip btn-reset" aria-label="Узнать подробнее">
               <svg class="popper__svg" width="16" height="16" viewbox="0 0 16 16" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path class="popper__svg-back"
@@ -1039,10 +1003,10 @@
               Подробная информация о&nbsp;содержимом 1
             </div>
 
-            обеспечение нашей деятельности однозначно фиксирует необходимость
+            обеспечене нашей деятельности однозначно фиксирует необходимость
             экономической целесообразности принимаемых решений.
             И&nbsp;нет&nbsp;сомнений, что действия представителей оппозиции могут быть рассмотрены
-            <button id="button2" class="projects__btn-tooltip btn-reset" aria-describedby="tooltip">
+            <button id="button2" class="projects__btn-tooltip btn-reset" aria-label="Узнать подробнее">
               <svg class="popper__svg" width="16" height="16" viewbox="0 0 16 16" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path class="popper__svg-back"
@@ -1058,7 +1022,7 @@
             </div>
 
             исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
-            <button id="button3" class="projects__btn-tooltip btn-reset" aria-describedby="tooltip">
+            <button id="button3" class="projects__btn-tooltip btn-reset" aria-label="Узнать подробнее">
               <svg class="popper__svg" width="16" height="16" viewbox="0 0 16 16" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path class="popper__svg-back"
@@ -1070,79 +1034,80 @@
               </svg>
             </button>
             <div id="tooltip3" class="popper__popup" role="tooltip">
-              Подробная информация о&nbsp;содержимом 3
+              Информация о&nbsp;содержимом 3
             </div>
 
             предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также
             представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
             очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой неузнаваемости.
-            Подробнее:
-            <a class="projects__text-link btn-reset" href="#" aria-label="Подробнее о проекте">
-              blanchard-art.ru<span>/projects</span>
-            </a>
+            Подробнее:&nbsp;
+            <span class="projects__wrap-text-link">
+              <a class="projects__text-link btn-reset" href="#" aria-label="Подробнее о проекте">
+                blanchard-art.ru/projects
+              </a>
+              <a class="projects__text-link btn-reset" href="#" aria-label="Подробнее о проекте">
+                blanchard-art.ru
+              </a>
+              <a class="projects__text-link btn-reset" href="#" aria-label="Подробнее о проекте">
+                blanchard-art.ru/projects/about
+              </a>
+            </span>
           </div>
         </div>
+
 
         <div class="projects__bottom flex">
           <h3 class="projects__bloc-title bloc-title">
             Партнёры проектов:
           </h3>
           <div class="projects__wrap flex">
-            <button class="projects__btn btn-reset projects__btn-prev"></button>
-            <button class="projects__btn btn-reset projects__btn-next"></button>
+            <button class="projects__btn btn-reset projects__btn-prev" aria-label="К предидущему слайду"></button>
+            <button class="projects__btn btn-reset projects__btn-next" aria-label="К следующему слайду"></button>
 
             <div class="swiper-container projects__swiper">
               <ul class="swiper-wrapper list-reset projects__wrapper">
                 <li class="swiper-slide  projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par1.svg" alt="Партнёр №1">
                   </a>
                 </li>
-
                 <li class="swiper-slide projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par2.svg" alt="Партнёр №2">
                   </a>
                 </li>
-
                 <li class="swiper-slide projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par3.svg" alt="Партнёр №3">
                   </a>
                 </li>
-
                 <li class="swiper-slide  projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par4.svg" alt="Партнёр №4">
                   </a>
                 </li>
-
                 <li class="swiper-slide projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par5.svg" alt="Партнёр №5">
                   </a>
                 </li>
-
                 <li class="swiper-slide projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par6.svg" alt="Партнёр №6">
                   </a>
                 </li>
-
                 <li class="swiper-slide projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par7.svg" alt="Партнёр №7">
                   </a>
                 </li>
-
                 <li class="swiper-slide projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par8.svg" alt="Партнёр №8">
                   </a>
                 </li>
-
                 <li class="swiper-slide projects__slide">
-                  <a class="projects__link flex" href="#" aria-label="">
+                  <a class="projects__link flex" href="#">
                     <img src="img/par9.svg" alt="Партнёр №9">
                   </a>
                 </li>
@@ -1150,10 +1115,8 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
-
 
 
 
@@ -1161,6 +1124,7 @@
     <section id="contacts" class="contacts">
       <div class="container">
         <div class="contacts__content flex">
+
           <span class="contacts__PlaceAddress flex">
             <span class="contacts__place">
               Шоурум &#8470;&nbsp;4
@@ -1222,21 +1186,20 @@
               </li>
             </ul>
           </div>
-
         </div>
       </div>
-
       <div id="map1"></div>
     </section>
-
   </main>
+
+
 
 
   <footer class="foot">
     <div class="container">
       <div class="soc foot__soc flex">
         <a href="#" class="foot__logo">
-          <img src="img/logo.svg" alt="Логотип" class="foot__logo-img">
+          <img src="img/logo.svg" class="foot__logo-img" alt="Логотип">
         </a>
         <ul class="soc__list list-reset flex">
           <li class="soc__item">
@@ -1264,10 +1227,8 @@
           </li>
         </ul>
       </div>
-
     </div>
   </footer>
-
 
 
   <!-- SWIPER -->
@@ -1280,11 +1241,14 @@
   <script src="https://unpkg.com/accordion-js@3.1.1/dist/accordion.min.js"></script>
   <!-- TOOLTIP -->
   <script src="libs/popper.js"></script>
+  <!-- MAP -->
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script> -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
   <!-- FORM + MASK-->
   <script src="libs/just-validate.min.js"></script>
   <script src="libs/inputmask.min.js"></script>
-  <!-- MAP -->
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <!-- FOCUS-VISIBLE -->
+  <script src="libs/focus-visible.js"></script>
 
   <script src="script.js"></script>
 </body>
