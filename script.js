@@ -21,13 +21,13 @@ menuLinks.forEach(function (el) {
     document.body.classList.remove('stop-scroll');
   });
 
-login.addEventListener('click',
-function () {
-    burger.classList.remove('burger--active');
-    menu.classList.remove('header__nav--active');
-    login.classList.remove('login--active');
-    document.body.classList.remove('stop-scroll');
-  });
+  login.addEventListener('click',
+    function () {
+      burger.classList.remove('burger--active');
+      menu.classList.remove('header__nav--active');
+      login.classList.remove('login--active');
+      document.body.classList.remove('stop-scroll');
+    });
 });
 
 
@@ -105,11 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", () => {
   let heroSlider = new Swiper(".hero__swiper", {
     loop: true,
+    a11y: false,
     spaceBetween: 50,
     speed: 300,
-    a11y: {
-      paginationBulletMessage: 'Перейти к слайду {{index}}',
-    },
     keyboard: {
       enabled: true,
       onlyInViewport: true
@@ -176,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 30
       }
     },
-    // a11y: false,
+
     a11y: {
       paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
