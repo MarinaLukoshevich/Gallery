@@ -47,7 +47,7 @@
 
 @media (max-width: 1300px) {
   .container {
-    max-width: 955px;
+    padding: 0 50px;
   }
 
   .header2 {
@@ -84,8 +84,10 @@
     opacity: 1;
   }
 
-  .burger:hover .burger__line {
-    background-color: var(--purple1);
+  @media (hover: hover) and (pointer: fine) {
+    .burger:hover .burger__line {
+      background-color: var(--purple1);
+    }
   }
 
   .burger__line {
@@ -131,10 +133,11 @@
   }
 
   .burger--active .burger__line {
-    background-color: var(--purple);
+    /* background-color: var(--purple); */
     transform-origin: center;
     transition: 0.3s linear;
   }
+
 
   /* BURGER finish*/
 
@@ -142,17 +145,33 @@
     overflow: hidden;
   }
 
-  .header__nav {
+  .header__NavLogin {
+    flex-direction: column;
+    align-items: flex-start;
     position: absolute;
     z-index: 1000;
     top: 0;
     left: 0;
-    padding: 100px 48px 170px;
     min-width: 320px;
     width: 100%;
     height: 100vh;
-    overflow-y: auto;
+    padding: 100px 50px 50px;
     background-color: var(--black);
+    overflow-y: auto;
+    visibility: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: 0.3s linear;
+  }
+
+  .header__NavLogin--active{
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+  }
+
+  .header__nav {
+    margin-bottom: 70px;
     visibility: hidden;
     transform: translateY(-100%);
     opacity: 0;
@@ -177,11 +196,7 @@
   }
 
   .login {
-    position: absolute;
-    z-index: 1000;
-    bottom: 50px;
-    left: 50px;
-    padding: 19px 88px 22px;
+    padding: 15px 88px 22px;
     border: 2px solid var(--purple1);
     border-radius: 100px;
     visibility: hidden;
@@ -213,8 +228,10 @@
     outline-offset: 3px;
   }
 
-  .login:hover {
-    background-color: var(--purple1);
+  @media (hover: hover) and (pointer: fine) {
+    .login:hover {
+      background-color: var(--purple1);
+    }
   }
 
   .login:active {
@@ -302,9 +319,14 @@
     transition: 0.3s linear;
   }
 
-  .header__input.focus-visible,
-  .header__input:hover {
+  .header__input.focus-visible {
     border-bottom: 1px solid var(--purple2);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .header__input:hover {
+      border-bottom: 1px solid var(--purple2);
+    }
   }
 
   .header__input:active {
@@ -328,9 +350,14 @@
     transition: 0.3s linear;
   }
 
-  .header__search-close.focus-visible .header__svg-close *,
-  .header__search-close:hover .header__svg-close * {
+  .header__search-close.focus-visible .header__svg-close * {
     fill: var(--purple1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .header__search-close:hover .header__svg-close * {
+      fill: var(--purple1);
+    }
   }
 
   .header__search-close:active .header__svg-close * {
@@ -634,10 +661,6 @@
 
 
 @media (max-width: 992px) {
-  .container {
-    max-width: 700px;
-  }
-
   .header__search-div {
     position: static;
   }
@@ -837,17 +860,10 @@
 
 
 
-@media (hover: none) {
-
-}
-
-
-
-
 
 @media (max-width: 580px) {
   .container {
-    max-width: 320px;
+    padding: 0 15px;
   }
 
   body {
@@ -900,8 +916,8 @@
     width: 100%;
   }
 
-  .header__nav {
-    padding: 47px 15px 100px;
+  .header__NavLogin {
+    padding: 47px 15px 25px;
   }
 
   .nav__list {
@@ -913,8 +929,6 @@
   }
 
   .login {
-    bottom: 26px;
-    left: 15px;
     padding: 11px 30px;
   }
 

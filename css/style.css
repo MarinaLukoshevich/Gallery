@@ -172,9 +172,11 @@ body {
   opacity: 1;
 }
 
-.btn:hover {
-  outline: 2px solid var(--purple3);
-  outline-offset: -2px;
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    outline: 2px solid var(--purple3);
+    outline-offset: -2px;
+  }
 }
 
 .btn:active {
@@ -203,7 +205,7 @@ body {
 
 .header__content {
   align-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 30px 0;
 }
 
@@ -213,9 +215,11 @@ body {
   max-height: 40px;
 }
 
-.header__nav {
-  margin-right: auto;
+.header__NavLogin {
+  width: calc(1245 * 100% / 1600);
+  justify-content: space-between;
 }
+
 
 .nav__list {
   flex-wrap: wrap;
@@ -254,9 +258,10 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-
-.nav__link:hover {
-  color: var(--purple2);
+@media (hover: hover) and (pointer: fine) {
+  .nav__link:hover {
+    color: var(--purple2);
+  }
 }
 
 .nav__link:active {
@@ -304,9 +309,12 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-.login__link:hover,
-.login__svg:hover~.login__link {
-  color: var(--purple2);
+@media (hover: hover) and (pointer: fine) {
+
+  .login__link:hover,
+  .login__svg:hover~.login__link {
+    color: var(--purple2);
+  }
 }
 
 .login__link:active,
@@ -314,9 +322,10 @@ body {
   color: var(--purple1);
 }
 
-
-.login:hover .login__svg * {
-  fill: var(--purple2);
+@media (hover: hover) and (pointer: fine) {
+  .login:hover .login__svg * {
+    fill: var(--purple2);
+  }
 }
 
 .login:active .login__svg * {
@@ -347,6 +356,11 @@ body {
   flex-wrap: wrap;
   padding: 23px 0;
 }
+
+.visually-hidden {
+  visibility: hidden;
+}
+
 
 .route-list {
   flex-wrap: wrap;
@@ -398,12 +412,14 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-.route__btn:hover {
-  color: var(--purple1);
-}
+@media (hover: hover) and (pointer: fine) {
+  .route__btn:hover {
+    color: var(--purple1);
+  }
 
-.route__btn:hover .route__svg * {
-  stroke: var(--purple1);
+  .route__btn:hover .route__svg * {
+    stroke: var(--purple1);
+  }
 }
 
 .route__btn--active {
@@ -459,9 +475,14 @@ body {
   margin-bottom: 20px;
 }
 
-.dropdown__item:focus-within,
-.dropdown__item:hover {
+.dropdown__item:focus-within {
   outline: 2px solid var(--purple1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dropdown__item:hover {
+    outline: 2px solid var(--purple1);
+  }
 }
 
 .dropdown__item::after {
@@ -609,7 +630,12 @@ body {
   background: var(--white);
 }
 
-.dropdown__list:hover .simplebar-scrollbar::before,
+@media (hover: hover) and (pointer: fine) {
+  .dropdown__list:hover .simplebar-scrollbar::before {
+    opacity: 1;
+  }
+}
+
 .simplebar-scrolling .simplebar-scrollbar::before {
   opacity: 1;
 }
@@ -644,9 +670,14 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-.header2__input.focus-visible,
-.header2__input:hover {
+.header2__input.focus-visible {
   border-bottom: 1px solid var(--purple2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .header2__input:hover {
+    border-bottom: 1px solid var(--purple2);
+  }
 }
 
 .header2__input:active {
@@ -841,7 +872,13 @@ body {
   background-color: transparent;
 }
 
-.choices .choices__inner:hover,
+@media (hover: hover) and (pointer: fine) {
+  .choices .choices__inner:hover {
+    border: 1px solid var(--white);
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
 .choices .choices__inner.focus-visible {
   border: 1px solid var(--white);
   background: rgba(255, 255, 255, 0.2);
@@ -886,13 +923,11 @@ body {
   cursor: pointer;
 }
 
-.visually-hidden {
+.checkbox__input {
   position: absolute;
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .checkbox__span {
@@ -926,9 +961,14 @@ body {
 }
 
 .checkbox__input.focus-visible+.checkbox__span::before,
-.checkbox__input:hover+.checkbox__span::before,
 .checkbox__input:checked+.checkbox__span::before {
   border: 1px solid var(--purple);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .checkbox__input:hover+.checkbox__span::before {
+    border: 1px solid var(--purple);
+  }
 }
 
 .checkbox__input.focus-visible:not(:hover)+.checkbox__span {
@@ -996,7 +1036,13 @@ body {
   opacity: 0.4;
 }
 
-.gallery__btn.swiper-button-disabled:hover,
+@media (hover: hover) and (pointer: fine) {
+  .gallery__btn.swiper-button-disabled:hover {
+    background-color: var(--black2);
+    outline: none;
+  }
+}
+
 .gallery__btn.swiper-button-disabled:active {
   background-color: var(--black2);
   outline: none;
@@ -1008,8 +1054,10 @@ body {
   outline-offset: -2px;
 }
 
-.gallery__btn:hover {
-  background-color: var(--purple1);
+@media (hover: hover) and (pointer: fine) {
+  .gallery__btn:hover {
+    background-color: var(--purple1);
+  }
 }
 
 .gallery__btn:active {
@@ -1059,7 +1107,12 @@ body {
   border-color: var(--purple);
 }
 
-.gallery__slide:hover::after,
+@media (hover: hover) and (pointer: fine) {
+  .gallery__slide:hover::after {
+    opacity: 1;
+  }
+}
+
 .gallery__slide:active::after {
   opacity: 1;
 }
@@ -1175,7 +1228,6 @@ body {
 .accordion__control-text::before {
   content: "";
   position: absolute;
-  /* z-index: -1; */
   top: -6px;
   left: 0;
   bottom: -4px;
@@ -1196,9 +1248,11 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-.accordion__control:hover {
-  border-color: var(--purple1);
-  color: var(--purple1);
+@media (hover: hover) and (pointer: fine) {
+  .accordion__control:hover {
+    border-color: var(--purple1);
+    color: var(--purple1);
+  }
 }
 
 .accordion__control:active,
@@ -1233,10 +1287,16 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-.accordion__control:hover .accordion__svg-round,
 .accordion__control.focus-visible .accordion__svg-round {
   fill: var(--purple3);
   stroke: var(--purple3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .accordion__control:hover .accordion__svg-round {
+    fill: var(--purple3);
+    stroke: var(--purple3);
+  }
 }
 
 .is-active .accordion__control-svg {
@@ -1297,8 +1357,10 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-.link:hover:not(:active) {
-  border-bottom: 1px solid var(--purple1);
+@media (hover: hover) and (pointer: fine) {
+  .link:hover:not(:active) {
+    border-bottom: 1px solid var(--purple1);
+  }
 }
 
 
@@ -1361,9 +1423,11 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-.catalog__link:hover {
-  border-bottom: 1px solid var(--purple1);
-  color: var(--purple1);
+@media (hover: hover) and (pointer: fine) {
+  .catalog__link:hover {
+    border-bottom: 1px solid var(--purple1);
+    color: var(--purple1);
+  }
 }
 
 .catalog__link:active {
@@ -1440,8 +1504,10 @@ body {
   outline-offset: -2px;
 }
 
-.events__btn:hover {
-  background-color: var(--purple3);
+@media (hover: hover) and (pointer: fine) {
+  .events__btn:hover {
+    background-color: var(--purple3);
+  }
 }
 
 .events__btn:active {
@@ -1529,9 +1595,11 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-.events__link:hover {
-  border-bottom: 1px solid var(--purple);
-  color: var(--purple);
+@media (hover: hover) and (pointer: fine) {
+  .events__link:hover {
+    border-bottom: 1px solid var(--purple);
+    color: var(--purple);
+  }
 }
 
 .events__link:active {
@@ -1590,9 +1658,14 @@ body {
   outline: none;
 }
 
-.projects__btn-tooltip.focus-visible .popper__svg-back,
-.projects__btn-tooltip:hover .popper__svg-back {
+.projects__btn-tooltip.focus-visible .popper__svg-back {
   fill: var(--purple3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects__btn-tooltip:hover .popper__svg-back {
+    fill: var(--purple3);
+  }
 }
 
 .projects__btn-tooltip:active .popper__svg-back {
@@ -1605,10 +1678,16 @@ body {
 }
 
 .projects__btn-tooltip.focus-visible+.popper__popup,
-.projects__btn-tooltip:hover+.popper__popup,
 .projects__btn-tooltip:active+.popper__popup {
   opacity: 1;
   transform: scale(1, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects__btn-tooltip:hover+.popper__popup {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
 }
 
 /* state  finish */
@@ -1671,9 +1750,11 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-.projects__text-link:hover {
-  border-bottom: 1px solid var(--purple1);
-  color: var(--purple1);
+@media (hover: hover) and (pointer: fine) {
+  .projects__text-link:hover {
+    border-bottom: 1px solid var(--purple1);
+    color: var(--purple1);
+  }
 }
 
 .projects__text-link:active {
@@ -1752,14 +1833,22 @@ body {
   outline-offset: -2px;
 }
 
-.projects__btn.swiper-button-disabled:hover,
+@media (hover: hover) and (pointer: fine) {
+  .projects__btn.swiper-button-disabled:hover {
+    background-color: var(--gray1);
+    outline: none;
+  }
+}
+
 .projects__btn.swiper-button-disabled:active {
   background-color: var(--gray1);
   outline: none;
 }
 
-.projects__btn:hover {
-  background-color: var(--purple3);
+@media (hover: hover) and (pointer: fine) {
+  .projects__btn:hover {
+    background-color: var(--purple3);
+  }
 }
 
 .projects__btn:active {
@@ -1800,7 +1889,13 @@ body {
   outline: 1px solid var(--purple1);
 }
 
-.projects__link:hover,
+@media (hover: hover) and (pointer: fine) {
+  .projects__link:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
+
 .projects__link:active {
   filter: grayscale(0%);
   opacity: 1;
@@ -1884,10 +1979,16 @@ body {
 }
 
 .name.focus-visible,
-.tel.focus-visible,
-.name:hover,
-.tel:hover {
+.tel.focus-visible {
   background-color: var(--gray1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .name:hover,
+  .tel:hover {
+    background-color: var(--gray1);
+  }
 }
 
 .name:active,
@@ -1920,13 +2021,15 @@ body {
   transition: 0.3s ease-in-out;
 }
 
-.form__btn.focus-visible:not(:hover):after {
+.form__btn.focus-visible:not(:hover)::after {
   opacity: 1;
 }
 
-.form__btn:hover {
-  color: var(--white);
-  background-color: var(--purple1);
+@media (hover: hover) and (pointer: fine) {
+  .form__btn:hover {
+    color: var(--white);
+    background-color: var(--purple1);
+  }
 }
 
 .form__btn:active {
@@ -1934,6 +2037,7 @@ body {
   color: var(--white);
   background-color: var(--purple);
 }
+
 
 
 
@@ -1973,10 +2077,16 @@ body {
 }
 
 .messenger__link.focus-visible .whatsapp-svg-color,
-.messenger__link.focus-visible .twitter-svg-color,
-.messenger__link:hover .whatsapp-svg-color,
-.messenger__link:hover .twitter-svg-color {
+.messenger__link.focus-visible .twitter-svg-color {
   opacity: 0.5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .messenger__link:hover .whatsapp-svg-color,
+  .messenger__link:hover .twitter-svg-color {
+    opacity: 0.5;
+  }
 }
 
 .messenger__link:active .whatsapp-svg-color,
@@ -2056,8 +2166,10 @@ body {
   fill: var(--white);
 }
 
-.soc__link:hover * {
-  fill: var(--white);
+@media (hover: hover) and (pointer: fine) {
+  .soc__link:hover * {
+    fill: var(--white);
+  }
 }
 
 .soc__link:active * {
