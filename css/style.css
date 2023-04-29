@@ -149,10 +149,11 @@ body {
 .btn {
   position: relative;
   border-radius: var(--b-radius);
+  outline: none;
   text-align: center;
   color: var(--white);
   background-color: var(--purple1);
-  transition: 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
 }
 
 .btn::after {
@@ -165,7 +166,7 @@ body {
   border: 2px solid var(--purple2);
   border-radius: inherit;
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .btn.focus-visible:not(:hover):after {
@@ -236,7 +237,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   line-height: 25px;
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav__link::after {
@@ -249,13 +250,12 @@ body {
   left: -6px;
   background: var(--purple);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .nav__link.focus-visible:not(:active):not(:hover)::after {
   opacity: 1;
-  -moz-transform: matrix(1, 0, 0, -1, 0, 0);
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -282,13 +282,13 @@ body {
 
 .login__svg * {
   fill: var(--white);
-  transition: 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
 }
 
 .login__link {
   font-size: 18px;
   line-height: 25px;
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .login__link::after {
@@ -301,12 +301,12 @@ body {
   left: -6px;
   background: var(--purple);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .login__link.focus-visible:not(:active):not(:hover)::after {
   opacity: 1;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -358,6 +358,7 @@ body {
 }
 
 .visually-hidden {
+  position: fixed;
   visibility: hidden;
 }
 
@@ -381,12 +382,12 @@ body {
   align-items: center;
   gap: 5px;
   color: var(--white);
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .route__svg * {
   stroke: var(--white);
-  transition: 0.3s ease-in-out;
+  transition: stroke 0.3s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .route__btn::after {
@@ -399,17 +400,17 @@ body {
   left: -6px;
   background: var(--purple);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .route__btn.focus-visible:not(:active):not(:hover)::after {
   opacity: 1;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 .route__btn--active.focus-visible:not(:active):not(:hover)::after {
   opacity: 0;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -441,7 +442,13 @@ body {
   transform: translateY(-100%);
   visibility: hidden;
   opacity: 0;
-  transition: .3s ease-in-out;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.dropdown--active {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }
 
 .dropdown__list {
@@ -454,12 +461,6 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.dropdown--active {
-  opacity: 1;
-  transform: none;
-  visibility: visible;
-}
-
 .dropdown__item {
   position: relative;
   padding: 10px 14px;
@@ -468,7 +469,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  transition: .3s ease-in-out;
+  transition: outline .3s ease-in-out;
 }
 
 .dropdown__item:not(:last-child) {
@@ -495,7 +496,7 @@ body {
   background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
   visibility: hidden;
   opacity: 0;
-  transition: .3s ease-in-out;
+  transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
 }
 
 .dropdown__item:active::after {
@@ -651,7 +652,7 @@ body {
 /* state  start */
 .header2__search-submit {
   height: 22px;
-  transition: 0.3s ease-in-out;
+  transition: outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
 }
 
 .header2__search-submit.focus-visible {
@@ -667,7 +668,7 @@ body {
   background: transparent;
   color: var(--white);
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
 }
 
 .header2__input.focus-visible {
@@ -688,7 +689,7 @@ body {
   font-size: 18px;
   line-height: 25px;
   color: var(--white);
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .header2__input:active::placeholder {
@@ -853,7 +854,7 @@ body {
   border: solid var(--white);
   border-width: 0 1px 1px 0;
   transform: rotate(45deg) translate(-10px, 0);
-  transition: 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .choices[data-type*=select-one].is-open::after {
@@ -869,7 +870,7 @@ body {
 
 .is-open .choices__list--dropdown {
   border-color: var(--black3);
-  background-color: transparent;
+  background-color: var(--black);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -933,7 +934,7 @@ body {
 .checkbox__span {
   position: relative;
   padding-left: 24px;
-  transition: .3s ease-in-out;
+  transition: color .3s ease-in-out;
 }
 
 .checkbox__span::before {
@@ -944,7 +945,7 @@ body {
   width: 12px;
   height: 12px;
   border: 1px solid var(--white);
-  transition: .3s ease-in-out;
+  transition: border .3s ease-in-out;
 }
 
 .checkbox__span::after {
@@ -957,7 +958,7 @@ body {
   background-color: var(--purple);
   border-radius: 100%;
   opacity: 0;
-  transition: .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
 }
 
 .checkbox__input.focus-visible+.checkbox__span::before,
@@ -1007,7 +1008,7 @@ body {
   width: 30px;
   height: 30px;
   background-color: var(--black2);
-  transition: 0.3s ease-in-out;
+  transition: outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .gallery__btn::before {
@@ -1084,7 +1085,7 @@ body {
   display: block;
   padding-top: calc(100% - 6px);
   border: 3px solid transparent;
-  transition: .3s ease-in-out;
+  transition: border .3s ease-in-out, background-color .3s ease-in-out;
 }
 
 .gallery__slide::after {
@@ -1100,7 +1101,7 @@ body {
   opacity: 0;
   background: rgba(0, 0, 0, 0.5) url("../img/zoom.svg") no-repeat center center / 80px;
   background-clip: content-box;
-  transition: .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
 }
 
 .gallery__slide.focus-visible::before {
@@ -1218,7 +1219,7 @@ body {
   border-bottom: 1px solid var(--gray);
   width: 100%;
   text-align: left;
-  transition: 0.3s ease-in-out;
+  transition: outline 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 .accordion__control-text {
@@ -1234,18 +1235,17 @@ body {
   right: -8px;
   background-color: var(--purple1);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .accordion__control.focus-visible {
   outline: none;
-  /* border: none; */
   color: var(--white);
 }
 
 .accordion__control.focus-visible:not(:hover) .accordion__control-text::before {
   opacity: 1;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1280,11 +1280,11 @@ body {
   width: 50px;
   height: 50px;
   transform: translateY(-50%) rotate(-180deg);
-  transition: 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .accordion__control-svg * {
-  transition: 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
 }
 
 .accordion__control.focus-visible .accordion__svg-round {
@@ -1336,7 +1336,7 @@ body {
 
 .link {
   position: relative;
-  transition: 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
 }
 
 .link::after {
@@ -1349,12 +1349,12 @@ body {
   bottom: -4px;
   background-color: var(--purple1);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .link.focus-visible:not(:hover):not(:active)::after {
   opacity: 1;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1398,7 +1398,7 @@ body {
   font-size: 16px;
   line-height: 22px;
   color: var(--purple1);
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 .catalog__link::after {
@@ -1411,7 +1411,7 @@ body {
   left: 0;
   background: var(--purple1);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
 }
 
 .catalog__link.focus-visible:not(:active):not(:hover) {
@@ -1420,7 +1420,7 @@ body {
 
 .catalog__link.focus-visible:not(:active):not(:hover)::after {
   opacity: 1;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1461,7 +1461,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: var(--gray1);
-  transition: 0.3s ease-in-out;
+  transition: outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .events__btn::before {
@@ -1569,7 +1569,7 @@ body {
   margin-top: auto;
   border-bottom: 1px solid var(--purple1);
   color: var(--purple1);
-  transition: 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .events__link::after {
@@ -1582,7 +1582,7 @@ body {
   left: -8px;
   background: var(--purple1);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .events__link.focus-visible:not(:active):not(:hover) {
@@ -1592,7 +1592,7 @@ body {
 
 .events__link.focus-visible:not(:active):not(:hover)::after {
   opacity: 1;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1632,7 +1632,7 @@ body {
 }
 
 .projects__btn-tooltip * {
-  transition: .3s ease-in-out;
+  transition: fill .3s ease-in-out, stroke .3s ease-in-out;
 }
 
 .projects__btn-tooltip::before {
@@ -1702,7 +1702,7 @@ body {
   background: var(--black2);
   opacity: 0;
   transform: scale(-1, 0.2);
-  transition: .3s ease-in-out;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
 }
 
 .popper__popup::after {
@@ -1724,7 +1724,7 @@ body {
   position: relative;
   border-bottom: 1px solid transparent;
   color: var(--purple1);
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 .projects__text-link::after {
@@ -1737,7 +1737,7 @@ body {
   left: -6px;
   background: var(--purple);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
 }
 
 /* state  start */
@@ -1747,7 +1747,7 @@ body {
 
 .projects__text-link.focus-visible:not(:active):not(:hover)::after {
   opacity: 1;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: scale(1, -1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1789,7 +1789,7 @@ body {
   width: 30px;
   height: 30px;
   background-color: var(--gray1);
-  transition: 0.3s ease-in-out;
+  transition: outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .projects__btn::before {
@@ -1871,7 +1871,7 @@ body {
   height: 150px;
   outline: 1px solid var(--gray);
   outline-offset: -1px;
-  transition: 0.3s ease-in-out;
+  transition: outline 0.3s ease-in-out;
 }
 
 .projects__link {
@@ -1881,7 +1881,7 @@ body {
   height: 100%;
   filter: grayscale(100%);
   opacity: 0.5;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .projects__slide:focus-within:not(:hover),
@@ -1958,7 +1958,7 @@ body {
   font-weight: 400;
   color: var(--black1);
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .name::placeholder,
@@ -1997,15 +1997,14 @@ body {
 }
 
 .form__btn {
-  padding: 13px 35px;
-  outline: 2px solid var(--purple1);
-  outline-offset: -2px;
+  padding: 11px 33px;
+  border: 2px solid var(--purple1);
   font-weight: 700;
   font-size: 18px;
   line-height: 25px;
   color: var(--purple1);
   background-color: transparent;
-  transition: 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .form__btn::after {
@@ -2018,10 +2017,10 @@ body {
   border: 2px solid var(--purple1);
   border-radius: inherit;
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.form__btn.focus-visible:not(:hover)::after {
+.form__btn.focus-visible:not(:hover):not(:active)::after {
   opacity: 1;
 }
 
@@ -2033,7 +2032,7 @@ body {
 }
 
 .form__btn:active {
-  outline: 2px solid var(--purple3);
+  border: 2px solid var(--purple3);
   color: var(--white);
   background-color: var(--purple);
 }
@@ -2055,7 +2054,7 @@ body {
 }
 
 .messenger__link * {
-  transition: 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, stroke 0.3s ease-in-out;
 }
 
 .messenger__link::before {
@@ -2150,7 +2149,7 @@ body {
 
 .soc__link * {
   fill: #CACACA;
-  transition: 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
 }
 
 .soc__link::before {
