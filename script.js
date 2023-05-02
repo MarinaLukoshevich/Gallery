@@ -1,6 +1,7 @@
 
 // BURGER
 let burger = document.querySelector('.burger');
+let burgerClose = document.querySelector('.burger-close');
 let navLogin = document.querySelector('.header__NavLogin');
 let menu = document.querySelector('.header__nav');
 let menuLinks = menu.querySelectorAll('.nav__link');
@@ -8,16 +9,14 @@ let login = document.querySelector('.login');
 
 burger.addEventListener('click',
   function () {
-    burger.classList.toggle('burger--active');
-    navLogin.classList.toggle('header__NavLogin--active');
-    menu.classList.toggle('header__nav--active');
-    login.classList.toggle('login--active');
-    document.body.classList.toggle('stop-scroll');
+    navLogin.classList.add('header__NavLogin--active');
+    menu.classList.add('header__nav--active');
+    login.classList.add('login--active');
+    document.body.classList.add('stop-scroll');
   });
 
 menuLinks.forEach(function (el) {
   el.addEventListener('click', function () {
-    burger.classList.remove('burger--active');
     navLogin.classList.remove('header__NavLogin--active');
     menu.classList.remove('header__nav--active');
     login.classList.remove('login--active');
@@ -26,7 +25,14 @@ menuLinks.forEach(function (el) {
 
   login.addEventListener('click',
     function () {
-      burger.classList.remove('burger--active');
+      navLogin.classList.remove('header__NavLogin--active');
+      menu.classList.remove('header__nav--active');
+      login.classList.remove('login--active');
+      document.body.classList.remove('stop-scroll');
+    });
+
+  burgerClose.addEventListener('click',
+    function () {
       navLogin.classList.remove('header__NavLogin--active');
       menu.classList.remove('header__nav--active');
       login.classList.remove('login--active');
