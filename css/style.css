@@ -195,6 +195,7 @@ body {
 
 /* header  */
 .burger,
+.burger-close,
 .header__search-div {
   display: none;
 }

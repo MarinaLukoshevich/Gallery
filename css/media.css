@@ -69,6 +69,7 @@
 
   .burger-close {
     position: relative;
+    display: block;
     margin-bottom: 30px;
   }
 
@@ -658,6 +659,14 @@
 
 
 @media (max-width: 992px) {
+  .burger-close__svg {
+    width: 23px;
+    height: 23px;
+  }
+
+
+
+
   .header__search-div {
     position: static;
   }
