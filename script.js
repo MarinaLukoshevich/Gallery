@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //addDropdown
     routeBtns.forEach(btn => {
       btn.onclick = (el) => {
-        let currentItem = el.currentTarget; // - элемент, в котором в данный момент обрабатывается событие(<li class = route__item>)
+        let currentItem = el.currentTarget; // currentTarget = this(нельзя исп в стрелочных function)- элемент, в котором в данный момент обрабатывается событие(<li class = route__item>)
         let currentDrop = currentItem.closest('.route__item').querySelector('.dropdown'); // в действующем родителе route__item найдем соответствующий ему dropdown
 
         // сначала удалить, затем добавить!
@@ -105,16 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
     new Swiper(".hero__swiper", {
       loop: true,
       a11y: false,
-      spaceBetween: 50,
-      speed: 300,
+      speed: 2000,
+      direction: 'vertical',
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false // autoplay восстановится взаимодействия с клавиатурой
+      },
 
       keyboard: {
         enabled: true,
         onlyInViewport: true
-      },
-      mousewheel: {
-        sensitivity: 10,
-        eventsTarget: '.hero__swiper',
       },
     });
 
@@ -268,6 +268,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  function galleryModal() {
+    const btns = document.querySelectorAll('.gallery__slide');
+    const modals = document.querySelectorAll('.gallery__modal');
+    const btnsClose = document.querySelectorAll('.gallery__modal-close');
+    const modalsWrap = document.querySelector('.gallery__modals-overlay');
+
+    btns.forEach((btn) => {
+      btn.onclick = (el) => {
+        let path = el.currentTarget.getAttribute('data-path'); // currentTarget = this
+        modalsWrap.classList.add('gallery__modals-overlay--visible');
+        document.querySelector(`[data-target="${path}"]`).classList.add('gallery__modal--visible');
+      }
+    })
+
+    function removeModal() {
+      modalsWrap.classList.remove('gallery__modals-overlay--visible');
+      modals.forEach((modal) => {
+        modal.classList.remove('gallery__modal--visible');
+      })
+    }
+
+    modalsWrap.onclick = (el) => {
+      if (el.target === modalsWrap) { // без этого условия окно закроется ,если кликнуть на потомков modals
+        removeModal();
+      }
+    }
+
+    btnsClose.forEach((btn) => {
+      btn.onclick = () => {
+        removeModal();
+      }
+    })
+
+  }
+
+
+
   function catalogAccordion() {
     new Accordion(".js-accordion-container", {
       openOnInit: [0]
@@ -406,6 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
   headerRoute();
   allSlides();
   gallerySelect();
+  galleryModal();
   catalogAccordion();
   projectToolTips();
   contactsMap();
