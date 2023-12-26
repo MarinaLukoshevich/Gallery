@@ -1,4 +1,5 @@
 # Художественная галерея
+![hero-section](pixel-perfect/hero.jpg)
 ## О проекте
 
 Одностраничный сайт «Blanchard» - для художественной галереи 
@@ -9,7 +10,6 @@
 1. Склонируйте все содержимое репозитория `git clone <this repo>`
 1. Откройте проект с помощью `«Open with Live Server»`
 
-
 ## Задачи
 
 1. Вёрстка:
@@ -18,6 +18,9 @@
    - семантическая 
    - pixelPerfect (отклонения до 3px)
    - кроссбраузерная (браузеры: Chrome, Firefox, Safari, Opera, Edge)
+     
+   ![demoAdaptive](https://github.com/MarinaLukoshevich/Gallery/blob/master/pixel-perfect/demoAdaptive.gif)
+     
 1. Плавный юзабилити, работающий функционал:
    - бургер-меню
    - выпадающие списки
@@ -27,6 +30,9 @@
    - слайдеры
    - карта
    - подсказки
+     
+   ![demo](https://github.com/MarinaLukoshevich/Gallery/blob/master/pixel-perfect/demo.gif)
+
 1. БЭМ-именование классов, соблюдение CodeStyle
 1. Оптимизация процесса загрузки
 
