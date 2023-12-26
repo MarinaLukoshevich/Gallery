@@ -301,6 +301,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
 
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        removeModal();
+      }
+    })
+
   }
 
 
@@ -432,10 +438,28 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
 
-    validation.onSuccess(function () {
-      document.getElementById("form").submit();
-    });
+    // validation.onSuccess(() => {
+    //   document.getElementById("form").submit();
+    // });
   }
+
+
+
+  function smoothScroll() {
+    const smoothLinks = document.querySelectorAll('a[href^="#"]');
+    for (let link of smoothLinks) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+
+        document.querySelector(href).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    };
+  }
+
 
 
   headerBurger();
@@ -448,6 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
   projectToolTips();
   contactsMap();
   contactsForm();
+  smoothScroll();
 })
 
 
