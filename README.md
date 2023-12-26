@@ -31,7 +31,7 @@
    - карта
    - подсказки
      
-   ![demo](https://github.com/MarinaLukoshevich/Gallery/blob/master/pixel-perfect/demo.gif)
+   ![demoFunctional](https://github.com/MarinaLukoshevich/Gallery/blob/master/pixel-perfect/demoFunctional.gif)
 
 1. БЭМ-именование классов, соблюдение CodeStyle
 1. Оптимизация процесса загрузки
